@@ -41,7 +41,6 @@ class App extends Component {
         (task) => task.id !== e.target.parentNode.id
       ),
     });
-    console.log(this.state.tasks);
   };
 
   render() {
