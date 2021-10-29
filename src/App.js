@@ -35,6 +35,15 @@ class App extends Component {
     });
   };
 
+  onDelete = (e) => {
+    this.setState({
+      tasks: this.state.tasks.filter(
+        (task) => task.id !== e.target.parentNode.id
+      ),
+    });
+    console.log(this.state.tasks);
+  };
+
   render() {
     const { task, tasks } = this.state;
     return (
@@ -49,7 +58,7 @@ class App extends Component {
           />
           <button type="submit">Add task</button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} deleteTask={this.onDelete} />
       </div>
     );
   }
